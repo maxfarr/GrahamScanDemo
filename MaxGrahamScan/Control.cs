@@ -27,12 +27,22 @@ namespace MaxGrahamScan
 
         private void generateN_Click(object sender, EventArgs e)
         {
-            parent.Generate((int)n.Value);
+            parent.Generate(even.Checked, (int)n.Value);
         }
 
         private void generateRandom_Click(object sender, EventArgs e)
         {
-            parent.Generate();
+            parent.Generate(even.Checked);
+        }
+
+        private void instant_Click(object sender, EventArgs e)
+        {
+            parent.grahamScan();
+        }
+
+        private void stepByStep_Click(object sender, EventArgs e)
+        {
+            parent.grahamScan(100 - (int)((speed.Value - 1) * 10));
         }
     }
 }
